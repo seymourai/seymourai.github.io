@@ -1,121 +1,16 @@
-﻿*{
-
-   margin: 0;
-   padding:0;
-   box-sizing:border-box;
+﻿body {
+    margin: 0;
+    padding: 0;
 }
 
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: url(Background.png)no-repeat;
-    background-size: cover;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
 }
 
-.container{
-    position:fixed;
-    width:100%;
-    height:100%;
-    display:flex;
-    justify-content:center;
-    align-items:top;
-    overflow:hidden;
-}
-
-.container .image-wrapper {
-    position: relative;
-    display: inline-block;
-}
-
-.container .image-link {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-.container img{
-    position: relative;
-    top:20px;
-    left:60px;
-    object-fit:contain;
-}
-
-.container img#image1 {
-    position: absolute;
-    top: 210px;
-    left: -250px;
-    object-fit: contain;
-}
-
-.container img#image2 {
-    position: absolute;
-    top: 240px;
-    left: 200px;
-    object-fit: contain;
-}
-
-.container img#image3 {
-    position: absolute;
-    top: 500px;
-    left: 140px;
-    object-fit: contain;
-}
-
-
-.container h2 {
-
-    position:absolute;
-    top:15%;
-    left:50%;
-    transform:translate(-50%,-50%);
-
-    color:#fff;
-    font-size:48px;
-    font-weight:900;
-    letter-spacing:6px;
-    text-align:center;
-}
-
-.container h2 span{
-    font-size:48px;
-
-}
-
-.container img.object:hover {
-    filter: brightness(120%);
-    box-shadow: 10px 10px 20px rgba(39, 174, 245, 0.8);
-}
-
-
-
-.container img.object {
-    width: 200px; /* Adjust the width value as desired */
-    height: auto; /* Let the height adjust automatically to maintain aspect ratio */
-}
-
-p {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+h1 {
+    font-size: 36px;
     text-align: center;
-    background-color: #f1f1f1;
-    padding: 20px;
-}
-
-.container img.object {
-    width: 200px;
-    height: auto;
-    border-radius: 99%;
-    box-shadow: 10px 10px 20px rgba(0, 0, 150, 1.2);
-}
-
-
-
-
-
-@media (max-width:800px){
-    .container h2 {
-        font-size:60px;
-    }
 }
