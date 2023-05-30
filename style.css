@@ -1,25 +1,29 @@
-﻿*{
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 
-   margin: 0;
-   padding:0;
-   box-sizing:border-box;
 }
 
 body {
+    max-width: 100%;
+    max-height: 100%;
     font-family: 'Segoe UI', sans-serif;
     background: url(Background.png)no-repeat;
     background-size: cover;
     height: 100vh;
 }
 
-.container{
-    position:fixed;
-    width:100%;
-    height:100%;
-    display:flex;
-    justify-content:center;
-    align-items:top;
-    overflow:hidden;
+.container {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    overflow: hidden; /* Change overflow to visible */
 }
 
 .container .image-wrapper {
@@ -33,65 +37,112 @@ body {
     left: 0;
     width: 100%;
 }
-.container img{
-    position: relative;
-    top:20px;
-    left:60px;
-    object-fit:contain;
-}
+
 
 .container img#image1 {
     position: absolute;
-    top: 210px;
-    left: -250px;
+    top: 310px;
+    left: -270px;
     object-fit: contain;
 }
 
 .container img#image2 {
-    position: absolute;
+    position: relative;
     top: 240px;
     left: 200px;
     object-fit: contain;
 }
 
 .container img#image3 {
-    position: absolute;
+    position: relative;
     top: 500px;
     left: 140px;
     object-fit: contain;
 }
 
+.container1 {
 
+    background-color: #332e47;
+}
+
+.container1 img#Proj1 {
+    position: relative;
+
+    top: 490px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 1500px; /* Adjust the width value as desired */
+    height: auto; /* Let the height adjust automatically to maintain aspect ratio */
+    object-fit: cover;
+
+    transition: filter 0.3s;
+}
+
+    .container1 img#Proj1:hover {
+        filter: drop-shadow(0 0 20px #394450) drop-shadow(0 0 50px #394450); /* Add a glowing effect */
+    }
+
+
+
+.container img#Seymo_cir {
+    position: absolute;
+    top: 135px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 160px; /* Adjust the width value as desired */
+    height: auto; /* Let the height adjust automatically to maintain aspect ratio */
+    object-fit: cover;
+    filter: drop-shadow(0 0 10px green);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        filter: drop-shadow(0 0 10px green);
+    }
+
+    100% {
+        filter: drop-shadow(0 0 20px lime);
+    }
+}
+
+
+
+@keyframes torchGlow {
+    0% {
+        filter: drop-shadow(0 0 10px green);
+    }
+
+    100% {
+        filter: drop-shadow(0 0 20px lime);
+    }
+}
 .container h2 {
 
     position:absolute;
-    top:15%;
+    top:30%;
     left:50%;
     transform:translate(-50%,-50%);
 
     color:#fff;
-    font-size:48px;
-    font-weight:900;
-    letter-spacing:6px;
+    font-size:30px;
+    font-weight:200;
+    letter-spacing:2px;
     text-align:center;
 }
 
 .container h2 span{
-    font-size:48px;
+    font-size:30px;
 
 }
 
 .container img.object:hover {
-    filter: brightness(120%);
-    box-shadow: 10px 10px 20px rgba(39, 174, 245, 0.8);
+    filter: brightness(130%);
+    box-shadow: 10px 10px 20px rgba(144, 97, 241, 0.8);
 }
 
 
 
-.container img.object {
-    width: 200px; /* Adjust the width value as desired */
-    height: auto; /* Let the height adjust automatically to maintain aspect ratio */
-}
 
 p {
     position: fixed;
@@ -107,10 +158,15 @@ p {
     width: 200px;
     height: auto;
     border-radius: 99%;
-    box-shadow: 10px 10px 20px rgba(0, 0, 150, 1.2);
+    box-shadow: 10px 10px 20px rgba(107, 42, 244, 0.8);
 }
 
 
+
+.container1 p {
+    background: linear-gradient(to bottom, #322e47, #333448);
+    color: white; /* Add this line to set the text color to white */
+}
 
 
 
