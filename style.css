@@ -63,6 +63,9 @@ body {
 
 .container1 {
     position: relative;
+    min-height: 100vh; /* Use min-height to allow scrolling if content exceeds viewport height */
+    display: flex;
+    align-items: center;
     background-color: #332e47;
 }
 
@@ -75,7 +78,7 @@ body {
     width: 1500px; /* Adjust the width value as desired */
     height: auto; /* Let the height adjust automatically to maintain aspect ratio */
     object-fit: cover;
-
+    text-align:center;
     transition: filter 0.3s;
 }
 
