@@ -3,49 +3,150 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website| Change Background Position on Mousemove</title>
+    <title>Seymour Lopez| Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
-        <h2>Seymour Lopez<br><span>Data scientist</span></h2>
-        <img src="Seymo_cir.png" id="Seymo_cir" alt="">
 
-        <div class="image-wrapper">
-            <a href="https://github.com/Seymour22/Neural-Networks" class="image-link">
-                <img src="1.png" class="object" id="image1" data-value="-3" alt="">
-            </a>
-        </div>
+        <script>
+    const dotCount = 50;
+    const dotSizes = [1, 1.5, 2];
+    const maxOpacity = 0.8;
+    const fadeDuration = 2000; // Fade in/out duration in milliseconds
+    const cycleDuration = 10000; // Total cycle duration in milliseconds
 
-        <div class="image-wrapper">
-            <a href="https://github.com/Seymour22/Predictive-modelling" class="image-link">
-                <img src="2.png" class="object" id="image2" data-value="6" alt="">
-            </a>
-        </div>
+    function createDot(size) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot', `dot-size-${size}`);
 
-        <div class="image-wrapper">
-            <a href="https://github.com/Seymour22/Predictive-modelling" class="image-link">
-                <img src="3.png" class="object" id="image3" data-value="-4" alt="">
-            </a>
+      const container = document.querySelector('.container');
+      container.appendChild(dot);
 
-        </div>
+      const randomX = Math.floor(Math.random() * window.innerWidth);
+      const randomY = Math.floor(Math.random() * window.innerHeight);
+
+      const spread = 100; // Adjust the spread value as needed
+      const offsetX = Math.random() * spread - spread / 2;
+      const offsetY = Math.random() * spread - spread / 2;
+
+      dot.style.left = `${randomX + offsetX}px`;
+      dot.style.top = `${randomY + offsetY}px`;
+
+      dot.style.opacity = 0;
+      dot.style.transition = `opacity ${fadeDuration}ms linear`;
+
+      setTimeout(() => {
+        dot.style.opacity = maxOpacity;
+      }, 5);
+
+      setTimeout(() => {
+        dot.style.opacity = 0;
+      }, cycleDuration - fadeDuration);
+    }
+
+    function generateRandomDots() {
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot) => {
+        dot.remove();
+      });
+
+      for (let i = 0; i < dotCount; i++) {
+        const sizeIndex = Math.floor(Math.random() * dotSizes.length);
+        const size = dotSizes[sizeIndex];
+        createDot(size);
+      }
+
+      setTimeout(generateRandomDots, cycleDuration);
+    }
+
+    generateRandomDots();
+        </script>
+
+
+<a href="Seymour Lopez CV.pdf" download class="Download_CV">Download CV</a>
+
+<h2>Seymour Lopez<br><span>Data scientist</span></h2>
+<img src="Seymo_cir.png" id="Seymo_cir" alt="">
+
+<div class="image-wrapper">
+    <a href="https://github.com/Seymour22/Neural-Networks" class="image-link">
+        <img src="1.png" class="object" id="image1" data-value="-3" alt="">
+    </a>
+</div>
+
+<div class="image-wrapper">
+    <a href="https://github.com/Seymour22/Predictive-modelling" class="image-link">
+        <img src="2.png" class="object" id="image2" data-value="6" alt="">
+    </a>
+</div>
+
+<div class="image-wrapper">
+    <a href="https://github.com/Seymour22/Predictive-modelling" class="image-link">
+        <img src="3.png" class="object" id="image3" data-value="-4" alt="">
+    </a>
+
+</div>
+
+
     </div>
 
-    <div class="container1">
 
-        <img src="proj1.png" id="Proj1" alt="">
-
-        <p>
-            This is the default content for the index.html file. You can replace it with your own content.
-
-            This is the default content for the index.html file. You can replace it with your own content.
+<section class="education" id="education">
+    <h2 class="heading">My <span> Top Projects</span></h2>
+    <div class="education-row">
+        <div class="education-column">
+            <h3 class="title"> </h3>
 
 
-            This is the default content for the index.html file. You can replace it with your own content.
-        </p>
 
+            <div class="education-box">
+
+                <div class="education-content">
+                    <a href="https://github.com/Seymour22/Predictive-modelling" class="content-link">
+                        <div class="content">
+                            <div class="year"><i class="bx bxs-calendar"></i> 2017-2018 </div>
+                            <h3> Project1</h3>
+                            <p>
+                                This is my text..In Project 1 I display if a head turns left or right using OpenCV
+                                algorithm that detects these action from a set of video frames. Here I train the algorithm on
+                                video files rather than dynamic capture from the webcam. This enables to build a model from videos
+                                acquired from multiple sources.
+                            </p>
+                            <ul>
+                                <li>Bullet point 1</li>
+                                <li>Bullet point 2</li>
+                                <li>Bullet point 3</li>
+                            </ul>
+
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="education-content">
+                    <div class="content">
+                        <div class="year"><i class="bx bxs-calendar"></i> 2018-2019 </div>
+                        <h3> Project2</h3>
+                        <p>
+                            This is my text..In Project 2 I display if a head turns left or right using OpenCV
+                            algorithm that detects these action from a set of video frames. Here I train the algorithm on
+                            video files rather than dynamic capture from the webcam. This enables to build a model from videos
+                            acquired from multiple sources.
+                        </p>
+                        <ul>
+                            <li>Bullet point 1</li>
+                            <li>Bullet point 2</li>
+                            <li>Bullet point 3</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
+</section>
 
 
 
@@ -53,7 +154,7 @@
 
 
 
-    <script type="text/javascript">
+<script type="text/javascript">
     document.addEventListener("mousemove",parallax);
     function parallax(e){
       document.querySelectorAll(".object").forEach(function(move){
@@ -65,7 +166,7 @@
         move.style.transform="translateX("+x+"px) translateY("+y+"px)";
       });
     }
-    </script>
+</script>
 
 </body>
 </html>
