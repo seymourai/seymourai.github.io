@@ -1,0 +1,431 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+:root {
+    --color-primary: #191d2b;
+    --color-secondary: #27AE60;
+    --color-white: #FFFFFF;
+    --color-black: #000;
+    --color-grey0: #f8f8f8;
+    --color-grey-1: #dbe1e8;
+    --color-grey-2: #b2becd;
+    --color-grey-3: #6c7983;
+    --color-grey-4: #454e56;
+    --color-grey-5: #2a2e35;
+    --color-grey-6: #12181b;
+    --br-sm-2: 14px;
+    --box-shadow-1: 0 3px 15px rgba(0,0,0,.3);
+}
+
+body {
+    max-width: 100%;
+    max-height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    background: url(Background.png)no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.container5 {
+    display: none;
+    transform: translateY(-100%) scale(0);
+    transition: all 0.4s ease-in-out;
+    background-color: var(--color-primary);
+}
+
+.port-text {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.portfolios {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-gap: 2rem;
+margin-top: 3rem;
+}
+
+.portfolios .portfolio-item {
+    position: relative;
+    border-radius: 15px;
+}
+
+.portfolios .portfolio-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.portfolios .portfolio-item .hover-items {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-secondary);
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.portfolios .portfolio-item .hover-items h3 {
+    font-size: 1.5rem;
+    color: var(--color-white);
+    margin-bottom: 1.5rem;
+}
+
+.container5 h2 {
+font-size: 2rem;
+text-align: center;
+margin-bottom: 2rem;
+position: relative;
+}
+
+.container5 h2 span {
+    position: relative;
+}
+
+.container5 h2 .bg-text {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    color: var(--color-white);
+    z-index: -1;
+}
+
+
+
+.container {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    overflow: hidden; /* Change overflow to visible */
+}
+
+.container .image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.container .image-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+.container img#image1 {
+    position: relative;
+    top: 310px;
+    left: -270px;
+    object-fit: contain;
+
+}
+
+.container img#image2 {
+    position: relative;
+    top: 240px;
+    left: 200px;
+    object-fit: contain;
+}
+
+.container img#image3 {
+    position: relative;
+    top: 500px;
+    left: 140px;
+    object-fit: contain;
+}
+
+.container1 {
+    position: relative;
+    min-height: 100vh; /* Use min-height to allow scrolling if content exceeds viewport height */
+    display: flex;
+    align-items: center;
+    background-color: #332e47;
+}
+
+.container1 img#Proj1 {
+    position: absolute;
+
+    top: 490px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 1500px; /* Adjust the width value as desired */
+    height: auto; /* Let the height adjust automatically to maintain aspect ratio */
+    object-fit: cover;
+    text-align:center;
+    transition: filter 0.3s;
+}
+
+.container1 img#Proj1:hover {
+    filter: drop-shadow(0 0 20px #394450) drop-shadow(0 0 50px #394450); /* Add a glowing effect */
+}
+
+.container h2 {
+    margin-top: 10px; /* Adjust the margin-top value to create space for the image */
+}
+
+.container img#Seymo_cir {
+    position: absolute;
+
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 160px; /* Adjust the width value as desired */
+    height: auto; /* Let the height adjust automatically to maintain aspect ratio */
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px green);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        filter: drop-shadow(0 0 10px green);
+    }
+
+    100% {
+        filter: drop-shadow(0 0 20px lime);
+    }
+}
+
+
+
+@keyframes torchGlow {
+    0% {
+        filter: drop-shadow(0 0 10px green);
+    }
+
+    100% {
+        filter: drop-shadow(0 0 20px lime);
+    }
+}
+.container h2 {
+
+    position:absolute;
+    top:30%;
+    left:50%;
+    transform:translate(-50%,-50%);
+
+    color:#fff;
+    font-size:30px;
+    font-weight:400;
+    letter-spacing:2px;
+    text-align:center;
+}
+
+.container h2 span{
+    font-size:20px;
+
+}
+
+.container img.object:hover {
+    filter: brightness(130%);
+    box-shadow: 10px 10px 20px rgba(144, 97, 241, 0.8);
+}
+
+
+
+
+.education {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: auto;
+    padding-bottom: 5rem;
+    padding-left: 20%;
+    padding-right: 20%;
+    background-color: #322e47;
+}
+
+.education .educationo-row {
+    display:flex;
+    flex-wrap:wrap;
+    grid-gap:5rem;
+}
+
+.education-row .education-column{
+    flex: 1 1 40rem;
+}
+
+.education-column .education-box {
+    border-left: .2rem solid var(--color-grey-1);
+}
+
+.education-box .education-content {
+    position: relative;
+    padding-left:2rem;
+}
+
+.education-content .content{
+    position:relative;
+    padding:1.5rem;
+    border:.2rem solid var(--color-grey-1);
+    border-radius:.6rem;
+    margin-bottom:2rem;
+}
+
+
+
+.container img.object {
+    width: 200px;
+    height: auto;
+    border-radius: 99%;
+    box-shadow: 10px 10px 20px rgba(107, 42, 244, 0.8);
+}
+
+
+
+
+
+.project-section {
+    min-height: 100vh; /* Use min-height to allow scrolling if content exceeds viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container2 {
+    position: relative;
+
+    width: 90%; /* Set a percentage width to allow responsive scaling */
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.container2 img {
+    width: 25cm; /* Set the width of the image to approximately 15cm */
+    max-width: 100%; /* Ensure the image scales proportionally within the container */
+    height: auto; /* Let the height adjust automatically to maintain aspect ratio */
+}
+
+.container2 .project-content {
+    position: absolute;
+
+    top: 30%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8); /* Add background color with transparency */
+    padding: 20px;
+}
+
+.container2 h2 {
+    font-size: 24px;
+    margin-top: 0;
+}
+
+.container2 ul {
+    list-style-type: disc;
+    text-align: left;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.container2 li {
+    margin-bottom: 5px;
+}
+
+  .container2 img#project1 {
+        background-color: #f1f1f1;
+    }
+
+#project2 {
+    background-color: #eaeaea;
+}
+
+#project3 {
+    background-color: #dcdcdc;
+}
+
+#project4 {
+    background-color: #c0c0c0;
+}
+
+
+
+
+@media (max-width: 500px) {
+    .container img#Seymo_cir {
+        width: 120px; /* Adjust the width value for smaller screens */
+    }
+
+    .container h2 {
+        margin-top: 30px; /* Adjust the margin-top value for smaller screens */
+    }
+}
+
+
+
+            <section class="container2">
+                <div class="project-section">
+                    <img src="board.png" alt="Project 1">
+                    <div class="project-content">
+                        <h2>Project 1</h2>
+                        <ul>
+                            <li>Bullet point 1</li>
+                            <li>Bullet point 2</li>
+                            <li>Bullet point 3</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="container2">
+                <div class="project-section">
+                    <img src="board.png" alt="Project 2">
+                    <div class="project-content">
+                        <h2>Project 2</h2>
+                        <ul>
+                            <li>Bullet point 1</li>
+                            <li>Bullet point 2</li>
+                            <li>Bullet point 3</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="container2">
+                <div class="project-section">
+                    <img src="board.png" alt="Project 3">
+                    <div class="project-content">
+                        <h2>Project 3</h2>
+                        <ul>
+                            <li>Bullet point 1</li>
+                            <li>Bullet point 2</li>
+                            <li>Bullet point 3</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="container2">
+                <div class="project-section">
+                    <img src="board.png" alt="Project 4">
+                    <div class="project-content">
+                        <h2>Project 4</h2>
+                        <ul>
+                            <li>Bullet point 1</li>
+                            <li>Bullet point 2</li>
+                            <li>Bullet point 3</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>

@@ -3,13 +3,119 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website| Change Background Position on Mousemove</title>
+    <title>Seymour Lopez| Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
-        <h2>Seymour<br><span>Lopez</span></h2>
+
+        <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const container = document.querySelector(".container");
+    const flickerDotCount = 30;
+    const stationaryDotCount = 20;
+    const dotSizes = ["dot-size-1", "dot-size-2", "dot-size-3"];
+    const dots = [];
+
+    function createDot() {
+      const dot = document.createElement("div");
+      dot.className = "dot";
+      return dot;
+    }
+
+    function fadeInDot(dot) {
+      let opacity = 0;
+      dot.style.opacity = opacity;
+      container.appendChild(dot);
+
+      const fadeInInterval = setInterval(() => {
+        if (opacity < 1) {
+          opacity += 0.02;
+          dot.style.opacity = opacity;
+        } else {
+          clearInterval(fadeInInterval);
+        }
+      }, 40);
+    }
+
+    function fadeOutDot(dot) {
+      let opacity = 1;
+
+      const fadeOutInterval = setInterval(() => {
+        if (opacity > 0) {
+          opacity -= 0.02;
+          dot.style.opacity = opacity;
+        } else {
+          clearInterval(fadeOutInterval);
+          dot.remove();
+        }
+      }, 40);
+    }
+
+    function getRandomPosition() {
+      const x = Math.random() * container.offsetWidth;
+      const y = Math.random() * container.offsetHeight;
+      return { x, y };
+    }
+
+    function flickerDots() {
+      for (let i = 0; i < flickerDotCount; i++) {
+        const dotSize = dotSizes[Math.floor(Math.random() * dotSizes.length)];
+        const dot = createDot();
+        const position = getRandomPosition();
+
+        dot.style.left = position.x + "px";
+        dot.style.top = position.y + "px";
+        dot.classList.add(dotSize);
+        dots.push(dot);
+        fadeInDot(dot);
+
+        setTimeout(() => {
+          fadeOutDot(dot);
+          dots.splice(dots.indexOf(dot), 1);
+        }, 3000);
+      }
+    }
+
+    function stationaryDots() {
+      for (let i = 0; i < stationaryDotCount; i++) {
+        const dotSize = dotSizes[Math.floor(Math.random() * dotSizes.length)];
+        const dot = createDot();
+        const position = getRandomPosition();
+
+        dot.style.left = position.x + "px";
+        dot.style.top = position.y + "px";
+        dot.classList.add(dotSize);
+        dots.push(dot);
+        fadeInDot(dot);
+      }
+    }
+
+    function generateDots() {
+      flickerDots();
+      setTimeout(() => {
+        stationaryDots();
+      }, 3000);
+    }
+
+    setInterval(() => {
+      dots.forEach((dot) => {
+        fadeOutDot(dot);
+        dots.splice(dots.indexOf(dot), 1);
+      });
+      generateDots();
+    }, 5000);
+
+    generateDots();
+  });
+        </script>
+
+
+
+        <a href="Seymour Lopez CV.pdf" download class="Download_CV">Download CV</a>
+
+        <h2>Seymour Lopez<br><span>Data scientist</span></h2>
         <img src="Seymo_cir.png" id="Seymo_cir" alt="">
 
         <div class="image-wrapper">
@@ -30,24 +136,138 @@
             </a>
 
         </div>
+
+        <div class="image-wrapper">
+            <a href="https://github.com/Seymour22/Predictive-modelling" class="image-link">
+                <img src="4.png" class="object" id="image4" data-value="5" alt="">
+            </a>
+
+        </div>
+
+        <div class="image-wrapper">
+            <a href="https://github.com/Seymour22/Predictive-modelling" class="image-link">
+                <img src="5.png" class="object" id="image5" data-value="-6" alt="">
+            </a>
+
+        </div>
+
     </div>
 
-    <div class="container1">
 
-        <img src="proj1.png" id="Proj1" alt="">
+    <section class="education" id="education">
 
-        <p>
-            This is the default content for the index.html file. You can replace it with your own content.
+        <h2 class="heading">My <span> Top Projects</span></h2>
+        <div class="animate-on-scroll">
+            <div class="education-row">
+                <div class="education-column">
+                    <script>
+                    const contentBox = document.querySelector('.education-content .content');
 
-            This is the default content for the index.html file. You can replace it with your own content.
+                    contentBox.addEventListener('mousemove', (e) => {
+                    const boxRect = contentBox.getBoundingClientRect();
+                    const mouseX = e.clientX - boxRect.left;
+                    const boxWidth = boxRect.width;
+
+                    const tiltAmount = 5;
+                    const tiltPercentage = (mouseX / boxWidth) * tiltAmount;
+
+                    contentBox.style.transform = `perspective(800px) rotateX(${tiltAmount}deg) rotateY(${-tiltPercentage}deg)`;
+                    });
+
+                    contentBox.addEventListener('mouseleave', () => {
+                    contentBox.style.transform = 'none';
+                    });
+                    </script>
+
+                    <h3 class="title"> </h3>
 
 
-            This is the default content for the index.html file. You can replace it with your own content.
-        </p>
 
-    </div>
+                    <div class="education-box">
+
+                        <div class="education-content">
+                            <a href="https://github.com/Seymour22/Predictive-modelling" class="content-link">
+                                <div class="content">
+                                    <div class="year"><i class="bx bxs-calendar"></i> 2017-2018 </div>
+                                    <h3> Project1</h3>
+                                    <p>
+                                        This is my text..In Project 1 I display if a head turns left or right using OpenCV
+                                        algorithm that detects these action from a set of video frames. Here I train the algorithm on
+                                        video files rather than dynamic capture from the webcam. This enables to build a model from videos
+                                        acquired from multiple sources.
+                                    </p>
+                                    <ul>
+                                        <li>Bullet point 1</li>
+                                        <li>Bullet point 2</li>
+                                        <li>Bullet point 3</li>
+                                    </ul>
+
+                                </div>
+                            </a>
+                        </div>
 
 
+                        <div class="education-content">
+                            <div class="content">
+                                <div class="year"><i class="bx bxs-calendar"></i> 2018-2019 </div>
+                                <h3> Project2</h3>
+                                <p>
+                                    This is my text..In Project 2 I display if a head turns left or right using OpenCV
+                                    algorithm that detects these action from a set of video frames. Here I train the algorithm on
+                                    video files rather than dynamic capture from the webcam. This enables to build a model from videos
+                                    acquired from multiple sources.
+                                </p>
+                                <ul>
+                                    <li>Bullet point 1</li>
+                                    <li>Bullet point 2</li>
+                                    <li>Bullet point 3</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+
+
+    <script>
+    // Create an intersection observer instance
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Add the 'active' class when the observed element enters the viewport
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.33 }); // Adjust the threshold as needed
+
+    // Select the elements with the 'animate-on-scroll' class
+    const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+
+    // Observe each element with a staggered delay
+    elementsToAnimate.forEach((element, index) => {
+      setTimeout(() => {
+        observer.observe(element);
+      }, index * 200); // Adjust the delay (200ms) as needed
+    });
+
+    // Reset animation when scrolling back up
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop < lastScrollTop) {
+        elementsToAnimate.forEach(element => {
+          element.classList.remove('active');
+          observer.observe(element);
+        });
+      }
+      lastScrollTop = scrollTop;
+    });
+    </script>
 
 
 
