@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
@@ -125,27 +125,27 @@
         </div>
 
         <div class="image-wrapper">
-            <a href="https://github.com/Seymour22/Predictive-modelling" class="image-link">
+            <a href="https://github.com/Seymour22/SQL" class="image-link">
                 <img src="2.png" class="object" id="image2" data-value="6" alt="">
             </a>
         </div>
 
         <div class="image-wrapper">
-            <a href="https://github.com/Seymour22/Predictive-modelling" class="image-link">
+            <a href="https://github.com/Seymour22/Exploratory-analysis" class="image-link">
                 <img src="3.png" class="object" id="image3" data-value="-4" alt="">
             </a>
 
         </div>
 
         <div class="image-wrapper">
-            <a href="https://github.com/Seymour22/Predictive-modelling" class="image-link">
+            <a href="https://github.com/Seymour22/Published-papers" class="image-link">
                 <img src="4.png" class="object" id="image4" data-value="5" alt="">
             </a>
 
         </div>
 
         <div class="image-wrapper">
-            <a href="https://github.com/Seymour22/Predictive-modelling" class="image-link">
+            <a href="https://github.com/Seymour22/OpenCV_Application" class="image-link">
                 <img src="5.png" class="object" id="image5" data-value="-6" alt="">
             </a>
 
@@ -157,27 +157,17 @@
     <section class="education" id="education">
 
         <h2 class="heading">My <span> Top Projects</span></h2>
+        <style>
+        .heading {
+            background: linear-gradient(to right, #4e5aff 65%, #8b00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
         <div class="animate-on-scroll">
             <div class="education-row">
                 <div class="education-column">
-                    <script>
-                    const contentBox = document.querySelector('.education-content .content');
 
-                    contentBox.addEventListener('mousemove', (e) => {
-                    const boxRect = contentBox.getBoundingClientRect();
-                    const mouseX = e.clientX - boxRect.left;
-                    const boxWidth = boxRect.width;
-
-                    const tiltAmount = 5;
-                    const tiltPercentage = (mouseX / boxWidth) * tiltAmount;
-
-                    contentBox.style.transform = `perspective(800px) rotateX(${tiltAmount}deg) rotateY(${-tiltPercentage}deg)`;
-                    });
-
-                    contentBox.addEventListener('mouseleave', () => {
-                    contentBox.style.transform = 'none';
-                    });
-                    </script>
 
                     <h3 class="title"> </h3>
 
@@ -186,20 +176,17 @@
                     <div class="education-box">
 
                         <div class="education-content">
-                            <a href="https://github.com/Seymour22/Predictive-modelling" class="content-link">
+                            <a href="https://github.com/Seymour22/OpenCV_Application" class="content-link">
                                 <div class="content">
-                                    <div class="year"><i class="bx bxs-calendar"></i> 2017-2018 </div>
-                                    <h3> Project1</h3>
-                                    <p>
-                                        This is my text..In Project 1 I display if a head turns left or right using OpenCV
-                                        algorithm that detects these action from a set of video frames. Here I train the algorithm on
-                                        video files rather than dynamic capture from the webcam. This enables to build a model from videos
-                                        acquired from multiple sources.
-                                    </p>
+                                    <div class="year"><i class="bx bxs-calendar"></i>  </div>
+                                    <h3 style="margin-bottom: 10px;"> Project 1: Video action detection using OpenCV</h3>
+                                    <p style="margin-bottom: 10px;">
+                                    Here I design a application using the OpenCV library, that detects if a head turns left or right by training from a set of video frames. The aim of this application is to extend it to diagnose motor neuron diseases based on notable body movements. This app was also deployed on <a href="https://seymour22-opencv-application-app-ptoxjo.streamlit.app/"style="color: #FF9999; ">streamlit</a>. Skills used here:
+                                    </p> <!-- Added margin-bottom for spacing -->
                                     <ul>
-                                        <li>Bullet point 1</li>
-                                        <li>Bullet point 2</li>
-                                        <li>Bullet point 3</li>
+                                        <li>Video data collection and annotation using python and bash. </li>
+                                        <li>Training the OpenCV model.</li>
+                                        <li>Appliction deployment on servers Streamlit, AWS and Azure.</li>
                                     </ul>
 
                                 </div>
@@ -208,21 +195,39 @@
 
 
                         <div class="education-content">
-                            <div class="content">
-                                <div class="year"><i class="bx bxs-calendar"></i> 2018-2019 </div>
-                                <h3> Project2</h3>
-                                <p>
-                                    This is my text..In Project 2 I display if a head turns left or right using OpenCV
-                                    algorithm that detects these action from a set of video frames. Here I train the algorithm on
-                                    video files rather than dynamic capture from the webcam. This enables to build a model from videos
-                                    acquired from multiple sources.
-                                </p>
-                                <ul>
-                                    <li>Bullet point 1</li>
-                                    <li>Bullet point 2</li>
-                                    <li>Bullet point 3</li>
-                                </ul>
-                            </div>
+                            <a href="https://github.com/Seymour22/Exploratory-analysis/blob/main/Project%201%20Exploring%20if%20changes%20in%20cortical%20structures%20predict%20diagnosis%20in%20the%20ADNI%20dataset.ipynb" class="content-link">
+                                <div class="content">
+                                    <div class="year"><i class="bx bxs-calendar"></i>  </div>
+                                    <h3 style="margin-bottom: 10px;"> Project 2: Exploring if changes in cortical structures predict neurodegenerative diagnosis</h3>
+                                    <p style="margin-bottom: 10px;">
+                                        This project was to perform exploratory analysis on the ADNI dataset. Skills used here:
+                                    </p>
+                                    <ul>
+                                        <li>Investigating the relationship between confounding variables and features</li>
+                                        <li>Removing confounding effects using regression</li>
+                                        <li>Predictive modelling using logistic regression and random forest</li>
+                                    </ul>
+
+                                </div>
+                            </a>
+                        </div>
+                        
+                        
+                        <div class="education-content">
+                            <a href="https://github.com/Seymour22/Exploratory-analysis/blob/main/Project%201%20Exploring%20if%20changes%20in%20cortical%20structures%20predict%20diagnosis%20in%20the%20ADNI%20dataset.ipynb" class="content-link">
+                                <div class="content">
+                                    <div class="year"><i class="bx bxs-calendar"></i>  </div>
+                                    <h3 style="margin-bottom: 10px;"> Project 3: Data preprocessing for uncovering epilepsy subtypes</h3>
+                                    <p style="margin-bottom: 10px;">
+                                        Here I clean and preprocess data in order to perform disease subtyping and staging of patients. Skills used here:
+                                    </p>
+                                    <ul>
+                                        <li>Imputing missing values</li>
+                                        <li>Harmonising data across multiple sources</li>
+                                        <li>Feature engineering to reduce data dimensions</li>
+                                    </ul>
+                                </div>
+                            </a>
                         </div>
 
                     </div>
